@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snow</title>
+
+    <style>
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url("images/snow_bg.png");  /* Added background image - Surj 10Jun2026 */
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+    
+      }
+
+      body {
+        background-color: #030f29;
+      }
+
+      #snow-container {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #snow-container button {
+        pointer-events: all;
+      }
+
+      @keyframes fall {
+        from {
+          top: 0%;
+        }
+
+        to {
+          top: 100%;
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes leftToRight {
+        from {
+          left: 0%;
+        }
+
+        to {
+          left: 100%;
+        }
+      }
+
+      .flake-container {
+        position: absolute;
+        padding: 0 50px;
+        top: 0;
+
+        animation: fall 10s 0s 1 linear forwards;
+      }
+
+      .flake-container img {
+        position: absolute;
+        animation: rotate 6s 0s infinite linear forwards,
+          leftToRight 2s 0s infinite ease-in-out alternate;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script src="scripts/snow.js"></script>
+  </body>
+</html>

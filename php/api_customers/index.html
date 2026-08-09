@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+
+	<!-- Designed by Surjit Randhawa 2026 -->
+
+ 	<style>
+ 		h1{
+	    border-left:5px;
+	    padding:2px;
+		}
+
+ 		h2{
+	    border-left:5px;
+	    padding:2px;
+		}
+		.centered { background: white; margin: 0 auto; width: 80%; }
+
+    .list {
+      font-family:'Courier New', Courier, monospace;
+      font-size: medium;
+      line-height:180%;
+    }
+
+    p {
+     line-height: 15px;
+      margin: 15px 0;
+    }
+	</style>
+
+  <title>API Tests</title>
+ </head>
+
+ <body>
+	 <div class="centered">
+		<h1> API Tests </h1>
+
+		<p>This allows API calls to retrieve data from a MySQL database on this server. Uses PHP V8 as the backend processing language.</p>
+		<p>Supported API calls are shown below: </p>
+
+    <ul class = "list" >
+      <li>GET         : Get all data </li>
+      <li>Get [id]    : Get data for just one item with 'id' value</li>
+      <li>POST        : Creates a new data entry</li>
+      <li>PUT [id]    : Updates data for just one item with 'id' value </li>
+      <li>DELETE [id] : Deletes entry for just one item with 'id' value </li>
+    </ul>
+
+		<br>
+    <h2>Examples:</h2>
+     <p> Test: GET</p>
+     <p>    http://www.randsoft.co.uk/api/read.php </p>
+     <br>
+     <p> Test: POST </p>
+     <p>    http://www.randsoft.co.uk/api/create.php </p>
+
+     <p>JSON body data:
+      {
+        "fname":	"Robert",
+        "lname":	"Jones",
+        "phone":	"12345678",
+        "email":	"robert@hotmail.com"
+      }
+    </p>
+    <br>
+		<p>Note: It is recommended to use 'POSTMAN' software or similar for testing this API.</p>
+ 		<br>
+		<br>
+ 		<footer><i>Designed by Surjit Randhawa 2026</i></footer>
+
+   </div>
+
+ </body>
+
+</html>

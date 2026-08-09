@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Designed by Surjit Randhawa 2026 -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eight queens problem with solutions</title>
+    <style>
+        :root {
+            --primary: #4a5568;
+            --accent: #ed8936;
+            --light-tile: #f0d9b5;
+            --dark-tile: #b58863;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+            color: #1a202c;
+        }
+
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #2d3748;
+        }
+
+        button:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+        }
+
+        .counter {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .board-container {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            padding: 12px;
+        }
+
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            border: 2px solid #333;
+        }
+
+        .tile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            user-select: none;
+        }
+
+        .light {
+            background-color: var(--light-tile);
+        }
+
+        .dark {
+            background-color: var(--dark-tile);
+        }
+
+        .queen {
+            animation: popIn 0.3s ease-out;
+            cursor: default;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Eight Chess Queens Problem</h1>
+    <p>Place 8 queens on a chess board in a way that they do not attack each other.</p>
+    <p>Find and cycle through all distinct solutions.</p>
+
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSolution(-1)">Previous</button>
+        <div class="counter" id="solutionCounter">Solution: 1 / 92</div>
+        <button id="nextBtn" onclick="changeSolution(1)">Next</button>
+    </div>
+
+    <div class="board-container">
+        <div class="chessboard" id="board"></div>
+    </div>
+
+    <script>
+        const boardSize = 8;
+        let solutions = [];
+        let currentIdx = 0;
+
+        // 1. Backtracking Solver to find all configurations
+        function solveAll8Queens() {
+            const queens = new Array(boardSize).fill(-1);
+
+            function isSafe(row, col) {
+                for (let i = 0; i < row; i++) {
+                    const placedCol = queens[i];
+                    if (placedCol === col ||
+                        placedCol - i === col - row ||
+                        placedCol + i === col + row) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function placeQueen(row) {
+                if (row === boardSize) {
+                    solutions.push([...queens]);
+                    return;
+                }
+                for (let col = 0; col < boardSize; col++) {
+                    if (isSafe(row, col)) {
+                        queens[row] = col;
+                        placeQueen(row + 1);
+                        queens[row] = -1; // Backtrack
+                    }
+                }
+            }
+
+            placeQueen(0);
+        }
+
+        // 2. DOM Renderer
+        function renderBoard() {
+            const boardEl = document.getElementById("board");
+            boardEl.innerHTML = ""; // Clear board
+
+            const currentSolution = solutions[currentIdx];
+
+            for (let row = 0; row < boardSize; row++) {
+                for (let col = 0; col < boardSize; col++) {
+                    const tile = document.createElement("div");
+
+                    // Determine tile color structure
+                    const isLight = (row + col) % 2 === 0;
+                    tile.className = `tile ${isLight ? 'light' : 'dark'}`;
+
+                    // Place queen emoji if coordinates match up
+                    if (currentSolution[row] === col) {
+                        tile.innerHTML = "<span class='queen'>&#9819</span>";
+                    }
+
+                    // Note: The HTML symbol for a black queen is &#9819
+
+                    boardEl.appendChild(tile);
+                }
+            }
+
+            // Update UI text controls
+            document.getElementById("solutionCounter").innerText = `Solution: ${currentIdx + 1} / ${solutions.length}`;
+            document.getElementById("prevBtn").disabled = currentIdx === 0;
+            document.getElementById("nextBtn").disabled = currentIdx === solutions.length - 1;
+        }
+
+        // 3. Navigation Controls
+        function changeSolution(step) {
+            currentIdx += step;
+            if (currentIdx >= 0 && currentIdx < solutions.length) {
+                renderBoard();
+            }
+        }
+
+        // Initialize App
+        solveAll8Queens();
+        if (solutions.length > 0) {
+            renderBoard();
+        }
+    </script>
+
+</body>
+</html>
