@@ -1,10 +1,12 @@
 import math # Needed for square root function
 
 
+# math_functions.py  - Some simple maths functions to demonstrate unit tests
+# Surjit Randhawa 2026
+
 # Add two numbers
 def add(x,y):
 	return x + y
-
 
 # Multiply two numbers
 def multiply(x, y):
@@ -16,7 +18,6 @@ def divide(x, y):
 		return None # Invalid, cannot divide by zero !
 	else:
 		return x / y
-
 
 # Square root	
 def square_root(x):
