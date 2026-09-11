@@ -1,0 +1,16 @@
+[
+  {
+    "id": "prod_01",
+    "name": "Wireless Mouse",
+    "price": 29.99,
+    "tags": ["electronics", "peripherals"],
+    "in_stock": true
+  },
+  {
+    "id": "prod_02",
+    "name": "Ergonomic Office Chair",
+    "price": 199.50,
+    "tags": ["furniture", "office"],
+    "in_stock": false
+  }
+]

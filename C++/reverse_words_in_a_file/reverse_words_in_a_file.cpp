@@ -4,6 +4,8 @@
 #include <string>
 #include <algorithm>
 
+// Designed by Surjit Randhawa 2026
+
 // Function to reverse individual words while keeping spaces/structure intact
 std::string reverseWordsInLine(const std::string& line) {
     std::string result = "";
