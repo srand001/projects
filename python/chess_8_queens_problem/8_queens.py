@@ -1,6 +1,12 @@
 
-# 8 queen problem
-# Given an 8x8 chessboard, the task is to place eight queens on the board such that no queens threaten each other.
+# Eight queen chess problem
+# -------------------------
+#
+# Given an 8x8 chessboard, the task is to place eight queens on the board such
+# that no queens threaten each other. There is more than one solution.
+# A valid layout requires that no two queens share the same row, column, 
+# or diagonal.
+#
 # Designed by Surjit Randhawa 2026
 
 def printSolution(board):
@@ -54,7 +60,7 @@ def solveNQueens(board, row, n):
     return result
 
 def queensSolve(n):
-    # Driver function to solve the N-Queens problem
+    # Main function to solve the N-Queens problem
     
     board = [[0] * n for _ in range(n)]
     

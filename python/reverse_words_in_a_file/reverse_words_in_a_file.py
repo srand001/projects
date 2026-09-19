@@ -1,3 +1,6 @@
+# Designed by Surjit Randhawa 2026
+
+# Function to reverse individual words while keeping spaces/structure intact
 def reverse_words_in_file(input_file, output_file):
     # Open the source file for reading and the new file for writing
     with open(input_file, 'r', encoding='utf-8') as infile, \
