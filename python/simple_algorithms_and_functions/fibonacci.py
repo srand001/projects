@@ -5,7 +5,7 @@
 # the two before it, starting with 0 and 1 giving 0, 1, 1, 2, 3, 5, 8, 13, and so on
 #-------------------------------------------------------------------------------------
 
-def func1():
+def fibonacci():
   x1,x2,x3,loop = 0,1,0,0
     
   print("0,1,", end="")
@@ -17,4 +17,4 @@ def func1():
      x2 = x3
      loop += 1
 
-func1()
+fibonacci()
