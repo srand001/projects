@@ -1,6 +1,6 @@
 #---------------------------------------------------------------------------------------
 # This program reads a text file, line by line. 
-# Read every lineand reverse the letters of each of the words. 
+# Read every line and reverse the letters of each of the words. 
 # Then write the new lines to a new file.
 #
 # Designed by Surjit Randhawa 2026
