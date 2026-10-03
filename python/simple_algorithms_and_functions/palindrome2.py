@@ -1,5 +1,10 @@
+#----------------------------------------------------------------------
 # Palindrome
-# A palindrome is a word, number, phrase, or other sequence of symbols that reads the same forwards and backwards
+# A palindrome is a word, number, phrase, or other sequence of symbols 
+# that reads the same forwards and backwards
+#
+# Designed by Surjit Randhawa 2026
+#----------------------------------------------------------------------
 
 def reverse_word(word):
 	reversed = ""

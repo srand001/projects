@@ -1,7 +1,11 @@
-#--------------------------------------------------------------------------------------
-# A palindrome is a word, number, phrase, or other sequence of symbols that reads the 
-# same forwards and backwards. Check if a string is a palindrome.
-#--------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+# A palindrome is a word, number, phrase, or other sequence of symbols that 
+# reads the same forwards and backwards. Check if a string is a palindrome.
+#
+# Designed by Surjit Randhawa 2026
+#----------------------------------------------------------------------------
+
+
 def palindrome(string):
 	string1 = string.upper() # Uppercase
 	string2 = string.upper()[::-1] # Uppercase and reversed
@@ -15,8 +19,8 @@ def palindrome(string):
 	
  
 # Run tests
-palindrome("orange")
-palindrome("apple")
-palindrome("madam")
-palindrome("Pip")
-palindrome("0770")
+palindrome("orange")  # False
+palindrome("apple")   # False
+palindrome("madam")   # True
+palindrome("Pip")     # True
+palindrome("0770")    # True

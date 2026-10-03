@@ -1,8 +1,9 @@
-
 #-------------------------------------------------------------------------------------
 # Fibonacci sequence
 # The Fibonacci sequence is a famous number pattern where each number is the sum of
 # the two before it, starting with 0 and 1 giving 0, 1, 1, 2, 3, 5, 8, 13, and so on
+#
+# Designed by Surjit Randhawa 2026
 #-------------------------------------------------------------------------------------
 
 def fibonacci():

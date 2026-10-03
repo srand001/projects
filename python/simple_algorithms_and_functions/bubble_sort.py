@@ -1,13 +1,13 @@
-
 #----------------------------------------------------------------------
 # Bubble Sort - sort into order
+#
+# Designed by Surjit Randhawa 2026
 #----------------------------------------------------------------------
 
-listVal = [0, 3, 5, 1, 7, 9]
+listVal = [3,2,1,5,4,0]
 
 def bubble_sort(sortList):
 	max = len(sortList)
-	temp=0
 	
 	for n1 in range(max-1):
 	  for n2 in range(max-n1-1):

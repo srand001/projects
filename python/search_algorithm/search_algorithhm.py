@@ -1,12 +1,13 @@
-
+#----------------------------------------------------------------------------------------------
 # Manhattan Distance Heuristic Search Algorithm
 # =============================================
-
+#
 # Instead of looking blindly in all directions, the Manhattan Distance heuristic function
 # calculates the sum of the absolute differences between the coordinates of two points on
 # a grid to work out the shortest path. Also known as the A* method.
-
+#
 # Designed by Surjit Randhawa 2026
+#----------------------------------------------------------------------------------------------
 
 
 import heapq

@@ -30,7 +30,7 @@ def reverse_words_in_file(input_file, output_file):
             # Write the modified line with its original newline character back
             outfile.write(new_line + '\n')
 
-input_file = "harry_potter.txt" # This is the file to be read
-output_file = "output.txt"      # This is the output file
-reverse_words_in_file(input_file, output_file)
+file1 = "harry_potter.txt" # This is the file to be read
+file2 = "output.txt"       # This is the output file
+reverse_words_in_file(file1, file2)
 

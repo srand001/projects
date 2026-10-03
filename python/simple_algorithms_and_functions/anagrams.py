@@ -1,5 +1,7 @@
 #----------------------------------------------------------------------
 # Check if a word is an anagram of another word
+#
+# Designed by Surjit Randhawa 2026
 #----------------------------------------------------------------------
 
 def isAnagram(word1, word2):
@@ -15,15 +17,10 @@ def isAnagram(word1, word2):
     else:
       print("False")
 
-isAnagram("abc","ccc")
-isAnagram("abc","cba")
-isAnagram("abc","acb")
-isAnagram("abc","cba")
+isAnagram("abc","ccc")   # False
+isAnagram("abc","cba")   # True
+isAnagram("abc","acb")   # True
+isAnagram("abc","cba")   # True
 
-# -->
-# False
-# True
-# True
-# True
 
         

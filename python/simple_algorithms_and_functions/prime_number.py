@@ -1,36 +1,26 @@
+#--------------------------------------------------------------------
 # Prime numbers
 # Functions to check if a number is prime
+#
+# Designed by Surjit Randhawa 2026
+#--------------------------------------------------------------------
 
-from math import sqrt
-
-
-def is_prime_a(n):
-    if n < 2:
-        return False
-    sqrt_n = int(sqrt(n))
-    for i in range(2, sqrt_n + 1):
-        if n % i == 0:
-            return False
-    return True
+from math import sqrt  # Square root function
 
 
-def is_prime_b(n):
-    if n <= 1:
-        return False
-    if n == 2:
-        return True
-    for i in range(2, int(n // 2) + 1):
-        if n % i == 0:
-            return False
-    return True
+def isPrime(n):
+  max = int(sqrt(n)) + 1
+  
+  for k in range(2,max):
+    if n % k==0:
+      return False
+
+  return True
 
 
-def is_prime_c(n):
-    divisible = 0
-    for i in range(1, n + 1):
-        if n % i == 0:
-            divisible += 1
-    if divisible == 2:
-        return True
-    return False
+n=2
+while n < 100:
+  if isPrime(n):
+    print(n,end=",")
+  n=n+1
 

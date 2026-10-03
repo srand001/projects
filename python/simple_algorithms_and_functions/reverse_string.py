@@ -1,7 +1,12 @@
+#----------------------------------------------------------------------
+# Reverse a string in Python
+# 
+# Shows 3 different methods to reverse a string.
+#
+# Designed by Surjit Randhawa 2026
+#----------------------------------------------------------------------
 
-# Reverse a string in Python using various methods
-# Note: There is no built-in function to reverse a string in Python.
-
+# Reverse string one letter at a time
 def reverse1(string):
 	reverse = ""
 	for c in string:
